@@ -8,7 +8,7 @@
       %h4
         meal
       = image_tag "plate7.png", :class => "icon", id: "uk-meal"
-      %p= @uk.meal
+      %p{ id: 'uk-meal-amount' }= @uk.meal
 
     .stat
       %h4

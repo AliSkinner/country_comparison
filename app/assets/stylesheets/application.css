@@ -30,6 +30,10 @@
   background-color: lightblue;
 }
 
+.uk header h2 {
+  margin-top: 2.55rem;
+}
+
 .other-country {
   position: absolute;
   right: 0;

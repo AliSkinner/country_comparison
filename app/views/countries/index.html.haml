@@ -3,54 +3,68 @@
     %h2
       United Kingdom
   .all-stats
+
     .stat
+      = image_tag "plate7.png", :class => "icon", id: "uk-meal"
       %h4
         meal
       = @uk.meal
+
     .stat
+      = image_tag "fast-food.png", :class => "icon"
       %h4
         mcdonalds
       = @uk.mcdonalds
+
     .stat
+      = image_tag "fast-food.png", :class => "icon"
       %h4
         beer
       = @uk.beer
+
     .stat
       %h4
         coke
       = @uk.coke
+
     .stat
       %h4
         cigarettes
       = @uk.cigs
+
     .stat
       %h4
         rent
       = @uk.rent
+
     .stat
       %h4
         cinema
       = @uk.cinema
-    .stat
-      %h4
-        jeans
-      = @uk.coke
+
     .stat
       %h4
         jeans
       = @uk.jeans
+
     .stat
       %h4
         shoes
       = @uk.shoes
+
     .stat
       %h4
         taxi
       = @uk.taxi
+
     .stat
       %h4
         coffee
       = @uk.coffee
 
-        
+
 .other-country
+
+  %p
+    .field
+      / = f.collection_select(:name, @country)

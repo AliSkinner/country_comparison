@@ -19,6 +19,7 @@
    width: 100%;
    height: 100%;
    text-align: center;
+   background-color: red;
  }
 
 .uk {
@@ -26,7 +27,7 @@
   left: 0;
   top: 0;
   width: 50%;
-  background-color: blue;
+  background-color: lightblue;
 }
 
 .other-country {
@@ -34,5 +35,15 @@
   right: 0;
   top: 0;
   width: 50%;
-  background-color: red;
+  /*background-color: red;*/
+}
+
+.stat {
+  border-top: 1px solid black;
+  padding: 1rem 0;
+  height: 400px;
+}
+
+.icon {
+  width: 250px;
 }

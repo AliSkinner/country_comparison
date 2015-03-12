@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-waypoints-rails', '~> 2.0.5'
 gem 'haml-rails'
 gem 'nokogiri'
 

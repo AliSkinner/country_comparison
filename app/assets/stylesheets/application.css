@@ -14,37 +14,35 @@
  *= require_self
  */
 
+  body, html {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: red;
+  }
 
- body, html {
-   width: 100%;
-   height: 100%;
-   text-align: center;
-   background-color: red;
-   font-family: Helvetica Neue;
+ .uk {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 50%;
+   background-color: lightblue;
  }
 
-.uk {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
-  background-color: lightblue;
-}
+ .other-country {
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 50%;
+   /*background-color: red;*/
+ }
 
-.other-country {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-  /*background-color: red;*/
-}
+ .stat {
+   border-top: 1px solid black;
+   padding: 1rem 0;
+   height: 400px;
+ }
 
-.stat {
-  border-top: 1px solid black;
-  padding: 1rem 0;
-  height: 400px;
-}
-
-.icon {
-  width: 250px;
-}
+ .icon {
+   width: 250px;
+ }

@@ -13,52 +13,64 @@
     .stat
       %h4
         mcdonalds
-      = @uk.mcdonalds
+      = image_tag "fast-food.png", :class => "icon", id: "uk-mcdonalds"
+      %p{ id: 'uk-mcdonalds-amount' }= @uk.mcdonalds
+      
+
 
     .stat
       %h4
         beer
-      = @uk.beer
+      = image_tag "beer34.png", :class => "icon", id: "uk-beer"
+      %p{ id: 'uk-beer-amount' }= @uk.beer
 
     .stat
       %h4
         coke
-      = @uk.coke
+      = image_tag "coke.png", :class => "icon", id: "uk-coke"
+      %p{ id: 'uk-coke-amount' }= @uk.coke
 
     .stat
       %h4
         cigarettes
-      = @uk.cigs
+      = image_tag "cigarette8.png", :class => "icon", id: "uk-cigs"
+      %p{ id: 'uk-cigs-amount' }= @uk.cigs
 
     .stat
       %h4
         rent
-      = @uk.rent
+      = image_tag "house121.png", :class => "icon", id: "uk-rent"
+      %p{ id: 'uk-rent-amount' }= @uk.rent
 
     .stat
       %h4
         cinema
-      = @uk.cinema
+      = image_tag "clapperboard2.png", :class => "icon", id: "uk-cinema"
+      %p{ id: 'uk-cinema-amount' }= @uk.cinema
 
     .stat
       %h4
         jeans
-      = @uk.jeans
+      = image_tag "jeans.png", :class => "icon", id: "uk-jeans"
+      %p{ id: 'uk-jeans-amount' }= @uk.jeans
 
     .stat
       %h4
         shoes
-      = @uk.shoes
+      = image_tag "trail.png", :class => "icon", id: "uk-shoes"
+      %p{ id: 'uk-shoes-amount' }= @uk.shoes
 
     .stat
       %h4
         taxi
-      = @uk.taxi
+      = image_tag "taxi14.png", :class => "icon", id: "uk-taxi"
+      %p{ id: 'uk-taxi-amount' }= @uk.taxi
 
     .stat
       %h4
         coffee
-      = @uk.coffee
+      = image_tag "hot51.png", :class => "icon", id: "uk-coffee"
+      %p{ id: 'uk-coffee-amount' }= @uk.coffee
           
 .other-country
   %form#search

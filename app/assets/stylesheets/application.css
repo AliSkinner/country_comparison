@@ -29,13 +29,26 @@
    background-color: lightblue;
  }
 
- .other-country {
-   position: absolute;
-   right: 0;
-   top: 0;
-   width: 50%;
-   /*background-color: red;*/
- }
+
+.uk {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  background-color: lightblue;
+}
+
+.uk header h2 {
+  margin-top: 2.55rem;
+}
+
+.other-country {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  /*background-color: red;*/
+}
 
  .stat {
    border-top: 1px solid black;

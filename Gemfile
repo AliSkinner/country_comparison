@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'jquery-waypoints-rails', '~> 2.0.5'
 gem 'haml-rails'
 gem 'nokogiri'
+gem 'waypoints-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

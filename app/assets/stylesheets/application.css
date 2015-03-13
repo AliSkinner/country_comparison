@@ -84,3 +84,11 @@
   margin-top: 0;
   font-size: 6rem;
 }
+
+.content {
+  margin: auto 0;
+}
+
+.price {
+  display: inline-block;
+}

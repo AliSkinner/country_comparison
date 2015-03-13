@@ -1,7 +1,13 @@
-.uk
-  %header
+#nav
+  .uk-header
     %h2
       United Kingdom
+  .select-menu
+    %form#search
+      %select#country-select
+        %option Select a country
+
+.uk
   .all-stats
 
     .stat
@@ -16,8 +22,6 @@
       = image_tag "fast-food.png", :class => "icon", id: "uk-mcdonalds"
       %p{ id: 'uk-mcdonalds-amount' }= @uk.mcdonalds
       
-
-
     .stat
       %h4
         beer
@@ -73,8 +77,6 @@
       %p{ id: 'uk-coffee-amount' }= @uk.coffee
           
 .other-country
-  %form#search
-    %select#country-select
-      %option Select a country
+  
   %header#other-header
   .other-all-stats

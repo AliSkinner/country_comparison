@@ -51,3 +51,28 @@
 .icon {
   width: 250px;
 }
+
+#nav {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+  z-index: 10;
+  color: white;
+}
+
+.uk, .other-country {
+  margin-top: 70px;
+}
+
+.uk-header {
+  width: 50%;
+  float: left;
+}
+
+.select-menu {
+  width: 50%;
+  margin-top: 20px;
+  float: right;
+}

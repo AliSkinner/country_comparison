@@ -19,21 +19,20 @@
     height: 100%;
     text-align: center;
     background-color: red;
+    background-position: fixed;
   }
 
- .uk {
-   position: absolute;
-   left: 0;
-   top: 0;
-   width: 50%;
-   background-color: lightblue;
- }
+  .uk, .other-country {
+    margin-top: 100px;
+    position: fixed;
+  }
+
 
 
 .uk {
   position: absolute;
   left: 0;
-  top: 0;
+  /*top: 0;*/
   width: 50%;
   background-color: lightblue;
 }
@@ -45,7 +44,7 @@
 .other-country {
   position: absolute;
   right: 0;
-  top: 0;
+  /*top: 0;*/
   width: 50%;
   /*background-color: red;*/
 }
@@ -59,4 +58,21 @@
 
  .icon {
    width: 250px;
+ }
+
+ #top-bar {
+  height: 100px;
+  width:100%;
+  top:0;
+  position:fixed;
+  background-color: white;
+  z-index:10000;
+ }
+
+ #uk-name {
+  text-align: left;
+ }
+
+ #search {
+  text-align: right;
  }

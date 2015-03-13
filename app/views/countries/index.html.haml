@@ -1,9 +1,15 @@
-.uk
+%nav#top-bar
   %header
-    %h2
+    %h2#uk-name
       United Kingdom
-  .all-stats
 
+  %form#search
+    %select#country-select
+      %option Select a country
+  
+
+.uk
+  .all-stats
     .stat
       %h4
         Meal in an Inexpensive Restaurant
@@ -73,9 +79,6 @@
       %p{ id: 'uk-coffee-amount' }= number_to_currency(@uk.coffee, unit: '£')
           
 .other-country
-  %form#search
-    %select#country-select
-      %option Select a country
   %header#other-header
   .other-all-stats
 

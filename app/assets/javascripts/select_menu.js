@@ -51,7 +51,7 @@ $(document).ready(function() {
             '<div class="stat">' + '<h4>Jeans (Levis 501 or Equivolent)</h4>' + '<img src="assets/jeans.png" class="icon" id="other-jeans">' + '<p id="other-jeans-amount">' + country.jeans + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Nike Trainers</h4>' + '<img src="assets/trail.png" class="icon" id="other-shoes">' + '<p id="other-shoes-amount">' + country.shoes + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Taxi (1km)</h4>' + '<img src="assets/taxi14.png" class="icon" id="other-taxi">' + '<p id="other-taxi-amount">' + country.taxi + '</p>' + '</div>' + 
-            '<div class="stat">' + '<h4>Cappuccino</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').fadeIn(1500).appendTo('.other-all-stats')
+            '<div class="stat">' + '<h4>Cappuccino</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').fadeIn(1000).appendTo('.other-all-stats')
           
           setAndMatchItemHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
           setAndMatchItemHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');

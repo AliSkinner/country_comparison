@@ -39,7 +39,8 @@
   right: 0;
   top: 0;
   width: 50%;
-  /*background-color: red;*/
+  height: 4795px;
+  background-color: red;
 }
 
 .stat {
@@ -75,4 +76,12 @@
   width: 50%;
   margin-top: 20px;
   float: right;
+}
+
+.totals {
+  width: 100%;
+  height: 350px;
+  background-color: pink;
+  position: absolute;
+  margin-top: 4795px;
 }

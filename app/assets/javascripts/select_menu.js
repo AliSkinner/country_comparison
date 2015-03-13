@@ -29,7 +29,7 @@ $(document).ready(function() {
           $('<h2>' + country.name + '</h2>').prependTo('#other-header')
           $('<div class="stat">' + '<h4>Meal</h4>' + '<img src="assets/plate7.png" class="icon" id="other-meal">' + '<p id="other-meal-amount">' + country.meal + '</p>' + '</div>' +
             '<div class="stat">' + '<h4>McDonalds</h4>' + '<img src="assets/fast-food.png" class="icon" id="other-mcdonalds">' + '<p id="other-mcdonalds-amount">' + country.mcdonalds + '</p>' + '</div>' + 
-            '<div class="stat">' + '<h4>Beer</h4>' + '<img src="assets/beer34.png" class="icon" id="other-beer">' + '<p id="other-beer-amount">' + country.beer + '</p>' + '</div>' + 
+            '<div class="stat">' + '<h4>Beer — £<span id="other-beer-amount">' + country.beer + '</span></h4>' + '<img src="assets/beer34.png" class="icon" id="other-beer">' + '</div>' + 
             '<div class="stat">' + '<h4>Coca-Cola</h4>' + '<img src="assets/coke.png" class="icon" id="other-coke">' + '<p id="other-coke-amount">' + country.coke + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Cigarettes</h4>' + '<img src="assets/cigarette8.png" class="icon" id="other-cigs">' + '<p id="other-cigs-amount">' + country.cigs + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>1 Bed Apartment</h4>' + '<img src="assets/house121.png" class="icon" id="other-rent">' + '<p id= "other-rent-amount">' + country.rent + '</p>' + '</div>' + 
@@ -37,7 +37,7 @@ $(document).ready(function() {
             '<div class="stat">' + '<h4>Jeans</h4>' + '<img src="assets/jeans.png" class="icon" id="other-jeans">' + '<p id="other-jeans-amount">' + country.jeans + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Shoes</h4>' + '<img src="assets/trail.png" class="icon" id="other-shoes">' + '<p id="other-shoes-amount">' + country.shoes + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Taxi (1km)</h4>' + '<img src="assets/taxi14.png" class="icon" id="other-taxi">' + '<p id="other-taxi-amount">' + country.taxi + '</p>' + '</div>' + 
-            '<div class="stat">' + '<h4>Coffee</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').appendTo('.other-all-stats')
+            '<div class="stat">' + '<h4>Coffee</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').fadeIn(1500).appendTo('.other-all-stats')
 
           var ukMeal = parseFloat($('#uk-meal-amount').text());
           var otherMeal = parseFloat($('#other-meal-amount').text());
@@ -75,6 +75,10 @@ $(document).ready(function() {
           var difference = otherRent / ukRent;
           var newRentSize = 250 * difference;
           $('#other-rent').css({'width' : newRentSize, 'height' : newRentSize});
+          var otherHeight = $('#other-rent-amount').parent().height();
+          if ($('#uk-rent-amount').parent().height() < otherHeight) {
+            $('#uk-rent-amount').parent().css({'height' : otherHeight})
+          };
 
           var ukCinema = parseFloat($('#uk-cinema-amount').text());
           var otherCinema = parseFloat($('#other-cinema-amount').text());

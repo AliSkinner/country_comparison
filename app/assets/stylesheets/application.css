@@ -14,21 +14,13 @@
  *= require_self
  */
 
-  body, html {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: red;
-    background-position: fixed;
-  }
 
-
-
-
-  .uk, .other-country {
-    margin-top: 100px;
-    position: fixed;
-  }
+ body, html {
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   background-color: red;
+ }
 
 .uk {
   position: absolute;
@@ -47,7 +39,7 @@
   right: 0;
   /*top: 0;*/
   width: 50%;
-  /*background-color: red;*/
+  background-color: red;
 }
 
 
@@ -73,7 +65,7 @@
 }
 
 .uk, .other-country {
-  margin-top: 70px;
+  margin-top: 3%;
 }
 
 .uk-header {
@@ -87,3 +79,12 @@
   float: right;
 }
 
+
+.uk-total h3, .other-total h3 {
+  margin-top: 8rem;
+}
+
+.uk-total h1, .other-total h1 {
+  margin-top: 0;
+  font-size: 6rem;
+}

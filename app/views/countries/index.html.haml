@@ -10,85 +10,77 @@
 .uk
   .all-stats
 
-  %form#search
-    %select#country-select
-      %option Select a country
-  
-
-.uk
-  .all-stats
     .stat
       %h4
         Meal in an Inexpensive Restaurant
       = image_tag "plate7.png", :class => "icon", id: "uk-meal"
-      %p{ id: 'uk-meal-amount' }= number_to_currency(@uk.meal, unit: '£')
+      %p{ id: 'uk-meal-amount' }= @uk.meal
 
     .stat
       %h4
         Meal at McDonalds
       = image_tag "fast-food.png", :class => "icon", id: "uk-mcdonalds"
-      %p{ id: 'uk-mcdonalds-amount' }= number_to_currency(@uk.mcdonalds, unit: '£')
+      %p{ id: 'uk-mcdonalds-amount' }= @uk.mcdonalds
       
     .stat
       %h4
         Domestic Beer (500ml Draught)
       = image_tag "beer34.png", :class => "icon", id: "uk-beer"
-      %p{ id: 'uk-beer-amount' }= number_to_currency(@uk.beer, unit: '£')
+      %p{ id: 'uk-beer-amount' }= @uk.beer
 
     .stat
       %h4
         Coca-Cola (330ml Bottle)
       = image_tag "coke.png", :class => "icon", id: "uk-coke"
-      %p{ id: 'uk-coke-amount' }= number_to_currency(@uk.coke, unit: '£')
+      %p{ id: 'uk-coke-amount' }= @uk.coke
 
     .stat
       %h4
         20 Marlboro Cigarettes 
       = image_tag "cigarette8.png", :class => "icon", id: "uk-cigs"
-      %p{ id: 'uk-cigs-amount' }= number_to_currency(@uk.cigs, unit: '£')
+      %p{ id: 'uk-cigs-amount' }= @uk.cigs
 
     .stat
       %h4
         Monthly Rent of a City-Center 1 Bedroom Apartment
       = image_tag "house121.png", :class => "icon", id: "uk-rent"
-      %p{ id: 'uk-rent-amount' }= number_to_currency(@uk.rent, unit: '£')
+      %p{ id: 'uk-rent-amount' }= @uk.rent
 
     .stat
       %h4
         Cinema Ticket
       = image_tag "clapperboard2.png", :class => "icon", id: "uk-cinema"
-      %p{ id: 'uk-cinema-amount' }= number_to_currency(@uk.cinema, unit: '£')
+      %p{ id: 'uk-cinema-amount' }= @uk.cinema
 
     .stat
       %h4
         Jeans (Levis 501 or Equivolent)
       = image_tag "jeans.png", :class => "icon", id: "uk-jeans"
-      %p{ id: 'uk-jeans-amount' }= number_to_currency(@uk.jeans, unit: '£')
+      %p{ id: 'uk-jeans-amount' }= @uk.jeans
 
     .stat
       %h4
         Nike Trainers
       = image_tag "trail.png", :class => "icon", id: "uk-shoes"
-      %p{ id: 'uk-shoes-amount' }= number_to_currency(@uk.shoes, unit: '£')
+      %p{ id: 'uk-shoes-amount' }= @uk.shoes
 
     .stat
       %h4
         Taxi (1km)
       = image_tag "taxi14.png", :class => "icon", id: "uk-taxi"
-      %p{ id: 'uk-taxi-amount' }= number_to_currency(@uk.taxi, unit: '£')
+      %p{ id: 'uk-taxi-amount' }= @uk.taxi
 
     .stat
       %h4
         Cappuccino
       = image_tag "hot51.png", :class => "icon", id: "uk-coffee"
-      %p{ id: 'uk-coffee-amount' }= number_to_currency(@uk.coffee, unit: '£')
+      %p{ id: 'uk-coffee-amount' }= @uk.coffee
+
+    .stat.uk-total
+      %h3 Total:
+      %h1= "#{@uk.meal + @uk.mcdonalds + @uk.beer + @uk.coke + @uk.cigs + @uk.rent + @uk.cinema + @uk.jeans + @uk.shoes + @uk.taxi + @uk.coffee}"
           
 .other-country
-
+  
   %header#other-header
   .other-all-stats
-
-
-
-
-

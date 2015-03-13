@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   function clearList() {
-    $('.other-country #other-header').html('');
     $('.other-country .other-all-stats').html('');
   }
 
@@ -41,6 +40,7 @@ $(document).ready(function() {
       clearList();
       $.each(response, function(index, country){
         if (country.name === chosenCountry) {
+          var countryTotal = (country.meal + country.mcdonalds + country.beer + country.coke + country.cigs + country.rent + country.cinema + country.jeans + country.shoes + country.taxi + country.coffee).toFixed(2);
           $('<div class="stat">' + '<h4>Meal in an Inexpensive Restaurant</h4>' + '<img src="assets/plate7.png" class="icon" id="other-meal">' + '<p id="other-meal-amount">' + country.meal + '</p>' + '</div>' +
             '<div class="stat">' + '<h4>Meal at McDonalds</h4>' + '<img src="assets/fast-food.png" class="icon" id="other-mcdonalds">' + '<p id="other-mcdonalds-amount">' + country.mcdonalds + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Domestic Beer (500ml Draught)</h4>' + '<img src="assets/beer34.png" class="icon" id="other-beer">' + '<p id="other-beer-amount">' + country.beer + '</p>' + '</div>' + 
@@ -52,7 +52,7 @@ $(document).ready(function() {
             '<div class="stat">' + '<h4>Nike Trainers</h4>' + '<img src="assets/trail.png" class="icon" id="other-shoes">' + '<p id="other-shoes-amount">' + country.shoes + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Taxi (1km)</h4>' + '<img src="assets/taxi14.png" class="icon" id="other-taxi">' + '<p id="other-taxi-amount">' + country.taxi + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Cappuccino</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>' +
-            '<div class="stat other-total">' + '<h3>Total:</h3>' + '<h1>' + (country.meal + country.mcdonalds + country.beer + country.coke + country.cigs + country.rent + country.cinema + country.jeans + country.shoes + country.taxi + country.coffee) + '</h1>' + '</div>').fadeIn(1000).appendTo('.other-all-stats')
+            '<div class="stat other-total">' + '<h3>Total:</h3>' + '<h1>' + countryTotal + '</h1>' + '</div>').fadeIn(1000).appendTo('.other-all-stats')
           
           setAndMatchItemHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
           setAndMatchItemHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');

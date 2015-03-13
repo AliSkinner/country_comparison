@@ -1,7 +1,14 @@
-%nav#top-bar
-  %header
-    %h2#uk-name
+#nav
+  .uk-header
+    %h2
       United Kingdom
+  .select-menu
+    %form#search
+      %select#country-select
+        %option Select a country
+
+.uk
+  .all-stats
 
   %form#search
     %select#country-select
@@ -22,8 +29,6 @@
       = image_tag "fast-food.png", :class => "icon", id: "uk-mcdonalds"
       %p{ id: 'uk-mcdonalds-amount' }= number_to_currency(@uk.mcdonalds, unit: '£')
       
-
-
     .stat
       %h4
         Domestic Beer (500ml Draught)
@@ -79,6 +84,7 @@
       %p{ id: 'uk-coffee-amount' }= number_to_currency(@uk.coffee, unit: '£')
           
 .other-country
+
   %header#other-header
   .other-all-stats
 

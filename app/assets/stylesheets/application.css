@@ -22,12 +22,13 @@
     background-position: fixed;
   }
 
+
+
+
   .uk, .other-country {
     margin-top: 100px;
     position: fixed;
   }
-
-
 
 .uk {
   position: absolute;
@@ -56,23 +57,33 @@
   min-height: 400px;
 }
 
- .icon {
-   width: 250px;
- }
 
- #top-bar {
-  height: 100px;
-  width:100%;
-  top:0;
-  position:fixed;
-  background-color: white;
-  z-index:10000;
- }
+.icon {
+  width: 250px;
+}
 
- #uk-name {
-  text-align: left;
- }
+#nav {
+  position: fixed;
+  top: 0;
+  height: 70px;
+  width: 100%;
+  background-color: black;
+  z-index: 10;
+  color: white;
+}
 
- #search {
-  text-align: right;
- }
+.uk, .other-country {
+  margin-top: 70px;
+}
+
+.uk-header {
+  width: 50%;
+  float: left;
+}
+
+.select-menu {
+  width: 50%;
+  margin-top: 20px;
+  float: right;
+}
+

@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('.other-country .other-all-stats').html('');
   }
 
-  function setItemHeight(ukAmount, otherAmount, otherIcon) {
+  function setAndMatchItemHeight(ukAmount, otherAmount, otherIcon) {
     var ukPrice = parseFloat($(ukAmount).text());
     var otherPrice = parseFloat($(otherAmount).text());
     var difference = otherPrice / ukPrice;
@@ -53,17 +53,17 @@ $(document).ready(function() {
             '<div class="stat">' + '<h4>Taxi (1km)</h4>' + '<img src="assets/taxi14.png" class="icon" id="other-taxi">' + '<p id="other-taxi-amount">' + country.taxi + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Coffee</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').fadeIn(1500).appendTo('.other-all-stats')
           
-          setItemHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
-          setItemHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');
-          setItemHeight('#uk-beer-amount', '#other-beer-amount', '#other-beer');
-          setItemHeight('#uk-coke-amount', '#other-coke-amount', '#other-coke');
-          setItemHeight('#uk-cigs-amount', '#other-cigs-amount', '#other-cigs');
-          setItemHeight('#uk-rent-amount', '#other-rent-amount', '#other-rent');
-          setItemHeight('#uk-cinema-amount', '#other-cinema-amount', '#other-cinema');
-          setItemHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
-          setItemHeight('#uk-shoes-amount', '#other-shoes-amount', '#other-shoes');
-          setItemHeight('#uk-taxi-amount', '#other-taxi-amount', '#other-taxi');
-          setItemHeight('#uk-coffee-amount', '#other-coffee-amount', '#other-coffee');
+          setAndMatchItemHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
+          setAndMatchItemHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');
+          setAndMatchItemHeight('#uk-beer-amount', '#other-beer-amount', '#other-beer');
+          setAndMatchItemHeight('#uk-coke-amount', '#other-coke-amount', '#other-coke');
+          setAndMatchItemHeight('#uk-cigs-amount', '#other-cigs-amount', '#other-cigs');
+          setAndMatchItemHeight('#uk-rent-amount', '#other-rent-amount', '#other-rent');
+          setAndMatchItemHeight('#uk-cinema-amount', '#other-cinema-amount', '#other-cinema');
+          setAndMatchItemHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
+          setAndMatchItemHeight('#uk-shoes-amount', '#other-shoes-amount', '#other-shoes');
+          setAndMatchItemHeight('#uk-taxi-amount', '#other-taxi-amount', '#other-taxi');
+          setAndMatchItemHeight('#uk-coffee-amount', '#other-coffee-amount', '#other-coffee');
         }
       })
     })

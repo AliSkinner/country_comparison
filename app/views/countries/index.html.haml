@@ -75,10 +75,12 @@
         Cappuccino
       = image_tag "hot51.png", :class => "icon", id: "uk-coffee"
       %p{ id: 'uk-coffee-amount' }= @uk.coffee
+
+    .stat.uk-total
+      %h3 Total:
+      %h1= "#{@uk.meal + @uk.mcdonalds + @uk.beer + @uk.coke + @uk.cigs + @uk.rent + @uk.cinema + @uk.jeans + @uk.shoes + @uk.taxi + @uk.coffee}"
           
 .other-country
   
   %header#other-header
   .other-all-stats
-
-.totals

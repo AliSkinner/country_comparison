@@ -5,12 +5,18 @@ $(document).ready(function() {
     $('.other-country .other-all-stats').html('');
   }
 
-  function setOtherHeight(ukAmount, otherAmount, otherIcon) {
+  function setItemHeight(ukAmount, otherAmount, otherIcon) {
     var ukPrice = parseFloat($(ukAmount).text());
     var otherPrice = parseFloat($(otherAmount).text());
     var difference = otherPrice / ukPrice;
     var newHeight = 250 * difference;
     $(otherIcon).css({'width' : newHeight, 'height' : newHeight});
+    var otherHeight = $(otherAmount).parent().height();
+    if ($(ukAmount).parent().height() < otherHeight) {
+      $(ukAmount).parent().css({'height' : otherHeight})
+    } else {
+      $(ukAmount).parent().css({'height' : '400'})
+    };
   }
 
   $.ajax({
@@ -47,63 +53,17 @@ $(document).ready(function() {
             '<div class="stat">' + '<h4>Taxi (1km)</h4>' + '<img src="assets/taxi14.png" class="icon" id="other-taxi">' + '<p id="other-taxi-amount">' + country.taxi + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Coffee</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').fadeIn(1500).appendTo('.other-all-stats')
           
-          setOtherHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
-          setOtherHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');
-          setOtherHeight('#uk-beer-amount', '#other-beer-amount', '#other-beer');
-          setOtherHeight('#uk-coke-amount', '#other-coke-amount', '#other-coke');
-          setOtherHeight('#uk-cigs-amount', '#other-cigs-amount', '#other-cigs');
-          setOtherHeight('#uk-rent-amount', '#other-rent-amount', '#other-rent');
-          setOtherHeight('#uk-cinema-amount', '#other-cinema-amount', '#other-cinema');
-          setOtherHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
-          setOtherHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
-
-          var ukRent = parseFloat($('#uk-rent-amount').text());
-          var otherRent = parseFloat($('#other-rent-amount').text());
-          var difference = otherRent / ukRent;
-          var newRentSize = 250 * difference;
-          $('#other-rent').css({'width' : newRentSize, 'height' : newRentSize});
-          var otherHeight = $('#other-rent-amount').parent().height();
-          if ($('#uk-rent-amount').parent().height() < otherHeight) {
-            $('#uk-rent-amount').parent().css({'height' : otherHeight})
-          } else {
-            $('#uk-rent-amount').parent().css({'height' : '400'})
-          };
-
-          var ukCinema = parseFloat($('#uk-cinema-amount').text());
-          var otherCinema = parseFloat($('#other-cinema-amount').text());
-          var difference = otherCinema / ukCinema;
-          var newCinemaSize = 250 * difference;
-          $('#other-cinema').css({'width' : newCinemaSize, 'height' : newCinemaSize});
-
-          var ukJeans = parseFloat($('#uk-jeans-amount').text());
-          var otherJeans = parseFloat($('#other-jeans-amount').text());
-          var difference = otherJeans / ukJeans;
-          var newJeansSize = 250 * difference;
-          $('#other-jeans').css({'width' : newJeansSize, 'height' : newJeansSize});
-
-          var ukJeans = parseFloat($('#uk-jeans-amount').text());
-          var otherJeans = parseFloat($('#other-jeans-amount').text());
-          var difference = otherJeans / ukJeans;
-          var newJeansSize = 250 * difference;
-          $('#other-jeans').css({'width' : newJeansSize, 'height' : newJeansSize});
-
-          var ukShoes = parseFloat($('#uk-shoes-amount').text());
-          var otherShoes = parseFloat($('#other-shoes-amount').text());
-          var difference = otherShoes / ukShoes;
-          var newShoesSize = 250 * difference;
-          $('#other-shoes').css({'width' : newShoesSize, 'height' : newShoesSize});
-
-          var ukTaxi = parseFloat($('#uk-taxi-amount').text());
-          var otherTaxi = parseFloat($('#other-taxi-amount').text());
-          var difference = otherTaxi / ukTaxi;
-          var newTaxiSize = 250 * difference;
-          $('#other-taxi').css({'width' : newTaxiSize, 'height' : newTaxiSize});
-
-          var ukCoffee = parseFloat($('#uk-coffee-amount').text());
-          var otherCoffee = parseFloat($('#other-coffee-amount').text());
-          var difference = otherCoffee / ukCoffee;
-          var newCoffeeSize = 250 * difference;
-          $('#other-coffee').css({'width' : newCoffeeSize, 'height' : newCoffeeSize});
+          setItemHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
+          setItemHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');
+          setItemHeight('#uk-beer-amount', '#other-beer-amount', '#other-beer');
+          setItemHeight('#uk-coke-amount', '#other-coke-amount', '#other-coke');
+          setItemHeight('#uk-cigs-amount', '#other-cigs-amount', '#other-cigs');
+          setItemHeight('#uk-rent-amount', '#other-rent-amount', '#other-rent');
+          setItemHeight('#uk-cinema-amount', '#other-cinema-amount', '#other-cinema');
+          setItemHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
+          setItemHeight('#uk-shoes-amount', '#other-shoes-amount', '#other-shoes');
+          setItemHeight('#uk-taxi-amount', '#other-taxi-amount', '#other-taxi');
+          setItemHeight('#uk-coffee-amount', '#other-coffee-amount', '#other-coffee');
         }
       })
     })

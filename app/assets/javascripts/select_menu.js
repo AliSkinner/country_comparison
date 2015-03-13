@@ -1,11 +1,23 @@
 $(document).ready(function() {
 
+  function clearList() {
+    $('.other-country #other-header').html('');
+    $('.other-country .other-all-stats').html('');
+  }
+
+  function setOtherHeight(ukAmount, otherAmount, otherIcon) {
+    var ukPrice = parseFloat($(ukAmount).text());
+    var otherPrice = parseFloat($(otherAmount).text());
+    var difference = otherPrice / ukPrice;
+    var newHeight = 250 * difference;
+    $(otherIcon).css({'width' : newHeight, 'height' : newHeight});
+  }
+
   $.ajax({
     type: 'GET',
     url: '/countries',
     dataType: 'json'
   }).done(function(response){
-    // console.log(response);
     $.each(response, function(index, value) {
       $('<option value="' + value.name + '">' + value.name + '</option>').appendTo('#country-select')
     })
@@ -14,19 +26,15 @@ $(document).ready(function() {
   var dropDown = $('#country-select');
 
   dropDown.on('change', function(){
-    // console.log($(this).val());
     chosenCountry = $(this).val();
     $.ajax({
       type: 'GET',
       url: '/countries',
       dataType: 'json'
     }).done(function(response){
-      $('.other-country #other-header').html('');
-      $('.other-country .other-all-stats').html('');
+      clearList();
       $.each(response, function(index, country){
-        // console.log(country.meal);
         if (country.name === chosenCountry) {
-          $('<h2>' + country.name + '</h2>').prependTo('#other-header')
           $('<div class="stat">' + '<h4>Meal</h4>' + '<img src="assets/plate7.png" class="icon" id="other-meal">' + '<p id="other-meal-amount">' + country.meal + '</p>' + '</div>' +
             '<div class="stat">' + '<h4>McDonalds</h4>' + '<img src="assets/fast-food.png" class="icon" id="other-mcdonalds">' + '<p id="other-mcdonalds-amount">' + country.mcdonalds + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Beer — £<span id="other-beer-amount">' + country.beer + '</span></h4>' + '<img src="assets/beer34.png" class="icon" id="other-beer">' + '</div>' + 
@@ -38,37 +46,16 @@ $(document).ready(function() {
             '<div class="stat">' + '<h4>Shoes</h4>' + '<img src="assets/trail.png" class="icon" id="other-shoes">' + '<p id="other-shoes-amount">' + country.shoes + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Taxi (1km)</h4>' + '<img src="assets/taxi14.png" class="icon" id="other-taxi">' + '<p id="other-taxi-amount">' + country.taxi + '</p>' + '</div>' + 
             '<div class="stat">' + '<h4>Coffee</h4>' + '<img src="assets/hot51.png" class="icon" id="other-coffee">' + '<p id="other-coffee-amount">' + country.coffee + '</p>' + '</div>').fadeIn(1500).appendTo('.other-all-stats')
-
-          var ukMeal = parseFloat($('#uk-meal-amount').text());
-          var otherMeal = parseFloat($('#other-meal-amount').text());
-          var difference = otherMeal / ukMeal;
-          var newSize = 250 * difference;
-          $('#other-meal').css({'width' : newSize, 'height' : newSize});
-
-          var ukMcdonalds = parseFloat($('#uk-mcdonalds-amount').text());
-          var otherMcdonalds = parseFloat($('#other-mcdonalds-amount').text());
-          var difference = otherMcdonalds / ukMcdonalds;
-          var newMcdonaldsSize = 250 * difference;
-          $('#other-mcdonalds').css({'width' : newMcdonaldsSize, 'height' : newMcdonaldsSize});
-          // console.log('match!');
-
-          var ukBeer = parseFloat($('#uk-beer-amount').text());
-          var otherBeer = parseFloat($('#other-beer-amount').text());
-          var difference = otherBeer / ukBeer;
-          var newBeerSize = 250 * difference;
-          $('#other-beer').css({'width' : newBeerSize, 'height' : newBeerSize});
-
-          var ukCoke = parseFloat($('#uk-coke-amount').text());
-          var otherCoke = parseFloat($('#other-coke-amount').text());
-          var difference = otherCoke / ukCoke;
-          var newCokeSize = 250 * difference;
-          $('#other-coke').css({'width' : newCokeSize, 'height' : newCokeSize});
-
-          var ukCigarette = parseFloat($('#uk-cigs-amount').text());
-          var otherCigarette = parseFloat($('#other-cigs-amount').text());
-          var difference = otherCigarette / ukCigarette;
-          var newCigaretteSize = 250 * difference;
-          $('#other-cigs').css({'width' : newCigaretteSize, 'height' : newCigaretteSize});
+          
+          setOtherHeight('#uk-meal-amount', '#other-meal-amount', '#other-meal');
+          setOtherHeight('#uk-mcdonalds-amount', '#other-mcdonalds-amount', '#other-mcdonalds');
+          setOtherHeight('#uk-beer-amount', '#other-beer-amount', '#other-beer');
+          setOtherHeight('#uk-coke-amount', '#other-coke-amount', '#other-coke');
+          setOtherHeight('#uk-cigs-amount', '#other-cigs-amount', '#other-cigs');
+          setOtherHeight('#uk-rent-amount', '#other-rent-amount', '#other-rent');
+          setOtherHeight('#uk-cinema-amount', '#other-cinema-amount', '#other-cinema');
+          setOtherHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
+          setOtherHeight('#uk-jeans-amount', '#other-jeans-amount', '#other-jeans');
 
           var ukRent = parseFloat($('#uk-rent-amount').text());
           var otherRent = parseFloat($('#other-rent-amount').text());
@@ -78,6 +65,8 @@ $(document).ready(function() {
           var otherHeight = $('#other-rent-amount').parent().height();
           if ($('#uk-rent-amount').parent().height() < otherHeight) {
             $('#uk-rent-amount').parent().css({'height' : otherHeight})
+          } else {
+            $('#uk-rent-amount').parent().css({'height' : '400'})
           };
 
           var ukCinema = parseFloat($('#uk-cinema-amount').text());

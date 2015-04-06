@@ -1,9 +1,11 @@
 source 'https://rubygems.org'
+ruby "2.1.4"
 
 gem 'jquery-waypoints-rails', '~> 2.0.5'
 gem 'haml-rails'
 gem 'nokogiri'
 gem 'waypoints-rails'
+gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
